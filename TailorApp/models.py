@@ -40,3 +40,10 @@ class measurementForShirt_model(models.Model):
     s_chest = models.IntegerField()
     s_waist = models.IntegerField()
     s_length = models.IntegerField()
+
+class measurementForKameez_model(models.Model):
+    k_productID = models.IntegerField(primary_key=True)
+    k_neckdep = models.IntegerField()
+    k_chest = models.IntegerField()
+    k_waist = models.IntegerField()
+    k_len = models.IntegerField()
