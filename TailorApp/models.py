@@ -47,3 +47,18 @@ class measurementForKameez_model(models.Model):
     k_chest = models.IntegerField()
     k_waist = models.IntegerField()
     k_len = models.IntegerField()
+    
+class measureForSalwar_model(models.Model):
+    sl_hip = models.IntegerField(primary_key=True)
+    sl_len = models.IntegerField()
+    
+class measurementForPant_model(models.Model):
+    pnt_len = models.IntegerField(primary_key=True)
+    pnt_waist = models.IntegerField()
+    pnt_inseam = models.IntegerField()
+    pnt_hsize = models.IntegerField()
+    
+class feedback_model(models.Model):
+    f_id = models.IntegerField(primary_key=True)
+    f_review = models.IntegerField()
+    f_comment = models.TextField()
