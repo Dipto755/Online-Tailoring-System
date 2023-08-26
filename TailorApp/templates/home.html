@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Solway&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="{% static 'logo.jpg' %}" alt="logo image">
+
+        </div>
+        <ul>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Fabric</a></li>
+            <li class="item"><a href="#">Design</a></li>
+            <li class="item"><a href="#">Measurement Tutorial</a></li>
+            <li class="item"><a href="#">About Us</a></li>
+            <div> 
+
+                {% comment %} <button class="btnl">Login</button>
+                <button class="btnr">SignUp</button> {% endcomment %}
+
+                
+            </div>
+        </ul>
+        <div>
+            <ul>
+                
+                {% comment %} <li class="item"><a href="/login">Login</a></li>
+                <li class="item"><a href="/signup-as">Signup</a></li> {% endcomment %}
+                <li class="item"><a href="/login">Login</a></li>
+                <li class="item"><a href="/signup-as">Signup</a></li>
+            
+            
+            </ul>
+        </div>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary" >Stitchify</h1>
+        <p>Your Perfect Outfit Awaits. Start Stitching Today!!!</p>
+
+    </section>
