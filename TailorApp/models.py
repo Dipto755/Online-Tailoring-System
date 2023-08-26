@@ -17,11 +17,16 @@ class fabric_model(models.Model):
     f_color = models.CharField(max_length=20)
     f_type = models.CharField(max_length=30)
     f_price = models.IntegerField()
-    
+
 class design_model(models.Model):
     d_id = models.IntegerField(primary_key=True)
     d_name = models.CharField(max_length=30)
 
+class order_model(models.Model):
+    o_id = models.IntegerField(primary_key=True)
+    o_date = models.DateField()
+    o_type = models.CharField(max_length=30)
+    o_due = models.DateField()
 
 class payment_model(models.Model):
     p_id = models.IntegerField(primary_key=True)
