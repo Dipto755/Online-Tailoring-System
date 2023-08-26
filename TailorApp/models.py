@@ -18,6 +18,11 @@ class fabric_model(models.Model):
     f_type = models.CharField(max_length=30)
     f_price = models.IntegerField()
     
+class design_model(models.Model):
+    d_id = models.IntegerField(primary_key=True)
+    d_name = models.CharField(max_length=30)
+
+
 class payment_model(models.Model):
     p_id = models.IntegerField(primary_key=True)
     p_method = models.CharField(max_length=20)
