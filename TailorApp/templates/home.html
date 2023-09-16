@@ -65,13 +65,25 @@
 
                         
                         </ul>
-
+                        
+                        {% if user.is_authenticated %}
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#">Hello, {{ fname }}</a>
+                                
+                            </li>
+                        </ul>
+                        <div class="d-none d-lg-block ms-lg-3">
+                            <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="/signout" role="button" aria-controls="offcanvasExample">Sign Out</a>
+                        </div>
+                        {% else %}
                         <div class="d-none d-lg-block ms-lg-3">
                             <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="/login" role="button" aria-controls="offcanvasExample">Login</a>
                         </div>
                         <div class="d-none d-lg-block ms-lg-3">
                             <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="/signup" role="button" aria-controls="offcanvasExample">SingUp</a>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </nav>
