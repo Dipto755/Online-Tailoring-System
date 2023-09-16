@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
     <head>
@@ -8,13 +9,12 @@
         <meta name="author" content="">
 
         <title>Home Page</title>
-              
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-        <link href="bootstrap.min.css" rel="stylesheet">
-        <link href="bootstrap-icons.css" rel="stylesheet">
-        <link href="home.css" rel="stylesheet">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'css/home.css' %}" rel="stylesheet">
         
 
     </head>
@@ -26,7 +26,7 @@
             <nav class="navbar navbar-expand-lg">                
                 <div class="container">
                     <a class="navbar-brand d-flex align-items-center" href="index.html">
-                        <img src="logo.jpg" class="navbar-brand-image img-fluid" alt="Stichify">
+                        <img src="{% static 'image/logo.jpg' %}" class="navbar-brand-image img-fluid" alt="Stichify">
                         <span class="navbar-brand-text">
                             Stichify
                             <small>Online Tailor System</small>
@@ -67,7 +67,7 @@
                         </ul>
 
                         <div class="d-none d-lg-block ms-lg-3">
-                            <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Login</a>
+                            <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="/login" role="button" aria-controls="offcanvasExample">Login</a>
                         </div>
                         <div class="d-none d-lg-block ms-lg-3">
                             <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">SingUp</a>
@@ -131,7 +131,7 @@
                         <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
                             <div class="member-block">
                                 <div class="member-block-image-wrap">
-                                    <img src="girl.png" class="member-block-image img-fluid" alt="">
+                                    <img src="{% static 'image/girl.png' %}" class="member-block-image img-fluid" alt="">
 
                                     <ul class="social-icon">
                                         <li class="social-icon-item">
@@ -155,7 +155,7 @@
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="member-block">
                                 <div class="member-block-image-wrap">
-                                    <img src="boy.png" class="member-block-image img-fluid" alt="">
+                                    <img src="{% static 'image/boy.png' %}" class="member-block-image img-fluid" alt="">
 
                                     <ul class="social-icon">
                                         <li class="social-icon-item">
@@ -169,8 +169,6 @@
 
                                 <div class="member-block-info d-flex align-items-center">
                                     <h4>Dipto &nbsp &nbsp&nbsp&nbsp&nbspShajid</h4>
-
-                                   
                                 </div>
                             </div>
                             
@@ -240,7 +238,7 @@
 
                                         <p class="mb-0">
                                             <a href="mailto:info@company.com" class="contact-link">
-                                               stichify@company.com
+                                                stichify@company.com
                                             </a>
                                         </p>
                                     </div>
@@ -250,7 +248,7 @@
                                     </div>
                                 </div>
 
-                                <img src="WorldMap.svg" class="img-fluid" alt="">
+                                <img src="{% static 'image/WorldMap.svg' %}" class="img-fluid" alt="">
                             </div>
                         </div>
 
@@ -265,9 +263,9 @@
 
                     <div class="col-lg-6 col-12 me-auto mb-5 mb-lg-0">
                         <a class="navbar-brand d-flex align-items-center" href="index.html">
-                            <img src="logo.jpg" class="navbar-brand-image img-fluid" alt="">
+                            <img src="{% static 'image/logo.jpg' %}" class="navbar-brand-image img-fluid" alt="">
                             <span class="navbar-brand-text">
-                               Stichify
+                                Stichify
                                 <small>Online tailor Service</small>
                             </span>
                         </a>
@@ -315,13 +313,13 @@
 
 <!-- 
         JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/animated-headline.js"></script>
-        <script src="js/modernizr.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/click-scroll.js' %}"></script>
+        <script src="{% static 'js/animated-headline.js' %}"></script>
+        <script src="{% static 'js/modernizr.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
 
     </body>
 </html>

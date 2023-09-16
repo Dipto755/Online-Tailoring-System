@@ -644,7 +644,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: url('3.jpg');
+  background-image: url('../image/3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

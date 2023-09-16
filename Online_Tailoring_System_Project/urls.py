@@ -20,5 +20,7 @@ import TailorApp.views as tviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("home/", tviews.home_view),
+    path("home/", tviews.home_view, name='home'),
+    path("", tviews.home_view),
+    path("login/", tviews.login_view, name='login'),
 ]
