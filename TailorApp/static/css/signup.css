@@ -1,65 +1,68 @@
 *,
 *:before,
-*:after{
+*:after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #080710;
-    background-image: url('signup.jpg');
+    background-image: url('../image/signup.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 
 }
-.background{
+
+.background {
     width: 430px;
     height: 520px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
 }
-.background .shape{
+
+.background .shape {
     height: 200px;
     width: 200px;
     position: absolute;
     border-radius: 50%;
 }
-.shape:first-child{
-    background: linear-gradient(
-        #cfafaf,
-        #ced3d6c5
-    );
+
+.shape:first-child {
+    background: linear-gradient(#cfafaf,
+            #ced3d6c5);
     left: 105px;
     top: -80px;
 }
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff522f54,
-        #f0961959
-    );
+
+.shape:last-child {
+    background: linear-gradient(to right,
+            #ff522f54,
+            #f0961959);
     right: -380px;
     bottom: -80px;
 }
-form{
+
+form {
     height: 600px;
     width: 450px;
-    background-color: rgba(255,255,255,0.13);
+    background-color: rgba(255, 255, 255, 0.13);
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 70%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 50px 35px;
-    
+
 }
-form *{
+
+form * {
     font-family: 'Mooli', sans-serif;
     font-family: 'Space Grotesk', sans-serif;
     color: #ffffff;
@@ -67,7 +70,8 @@ form *{
     outline: none;
     border: none;
 }
-form h3{
+
+form h3 {
     font-family: 'Merriweather', serif;
     font-size: 42px;
     font-weight: 500;
@@ -75,14 +79,15 @@ form h3{
     text-align: center;
 }
 
-label{
-    
+label {
+
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
 }
-input{
+
+input {
     display: block;
     height: 40px;
     width: 100%;
@@ -92,15 +97,17 @@ input{
     margin-top: 2px;
     font-size: 16px;
     font-weight: 300;
-   
+
 }
-::placeholder{
+
+::placeholder {
     color: #e5e5e5;
     font-family: 'Exo', sans-serif;
-   font-family: 'Merriweather', serif;
-   font-family: 'Satisfy', cursive;
+    font-family: 'Merriweather', serif;
+    font-family: 'Satisfy', cursive;
 }
-button{
+
+button {
     margin-top: 14px;
     width: 100%;
     background-color: #8a6747;
@@ -110,27 +117,32 @@ button{
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-    
+
 }
-.social{
-  margin-top: 30px;
-  display: flex;
+
+.social {
+    margin-top: 30px;
+    display: flex;
 }
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
+
+.social div {
+    background: red;
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #eaf0fb;
+    text-align: center;
 }
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
+
+.social div:hover {
+    background-color: rgba(255, 255, 255, 0.47);
 }
-.social .fb{
-  margin-left: 25px;
+
+.social .fb {
+    margin-left: 25px;
 }
-.social i{
-  margin-right: 4px;
+
+.social i {
+    margin-right: 4px;
 }

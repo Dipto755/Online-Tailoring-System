@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
     <title>Signup Page</title>
- 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Merriweather:ital,wght@1,900&family=Satisfy&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="signup.css"> 
+<link rel="stylesheet" href="{% static 'css/signup.css' %}"> 
 </head>
 <body>
     <div class="background">
@@ -27,21 +28,21 @@
         <div class="shape"></div>
     </div>
     <form action="" method="post">
-       
+    {% csrf_token %}
         <h3>Create Account</h3>
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Username" name="username" id="username">
+        <input type="text" placeholder="Username" name="username" id="username" Required>
 
         <label for="email">Email</label>
-        <input type="email" placeholder="Email or Phone" name="email" id="email">
+        <input type="email" placeholder="Email or Phone" name="email" id="email" Required>
 
         <label for="password1">Password</label>
-        <input type="password" placeholder="Password" id="password1" name="password1">
+        <input type="password" placeholder="Password" id="password1" name="password1" Required>
 
 
         <label for="password2">Confrom Password</label>
-        <input type="password" placeholder="Confrom Password" id="password2" name="password2">
+        <input type="password" placeholder="Confrom Password" id="password2" name="password2" Required>
         <button type="submit">Signup</button>
         
         <a href="" >Already have an account?</a>
