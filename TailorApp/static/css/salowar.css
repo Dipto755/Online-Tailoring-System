@@ -1,0 +1,144 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f1f1f3;
+    background-image: url('measurement_pic.jpg');
+    
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover;
+
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+
+
+
+
+.navbar {
+    /* background-color: #000000da; Background color for the navbar */
+    overflow: hidden;
+    height: 60px;
+    background-color:  #685543e1;
+}
+.navbar h3{
+    padding-top: 10px;
+    padding-left: 1100px;
+    color: #eaf0fb;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    font-size: 16px;
+    font-family: 'Gabarito', cursive;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: rgb(255, 255, 255);
+    color:  #685543;
+}
+form{
+    height: 450px;
+    width: 690px;
+    background-color:#fffdfc67;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 55%;
+    left: 30%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 20px 35px;
+    
+}
+form *{
+    font-family: 'Mooli', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #130808;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-family: 'Croissant One', cursive;
+    color: #492f15;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 1000;
+    
+}
+input{
+    display: block;
+    height: 25px;
+    width: 90%;
+    background-color: rgba(87, 78, 78, 0.445);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 2px;
+    font-size: 16px;
+    font-weight: 300;
+   
+   
+}
+::placeholder{
+    color: #e5e5e5;
+    font-family: 'Exo', sans-serif;
+   font-family: 'Merriweather', serif;
+   font-family: 'Satisfy', cursive;
+   
+}
+button{
+    margin-top: 20px;
+    width: 25%;
+    /* background-color: #8a6747; */
+    background-color: #417209;
+    color: #ffffff;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    
+    
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
