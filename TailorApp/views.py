@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .models import fabric_model
 
 # Create your views here.
 
@@ -54,3 +55,9 @@ def logout_views(request):
     logout(request)
     
     return redirect('home')
+
+def fabric_view(request):
+    fabric_list = fabric_model.objects.all()
+    
+    return render(request, 'fabric.html' ,
+                {'fabric_list' : fabric_list})

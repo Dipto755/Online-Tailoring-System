@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -12,9 +13,9 @@
       <title>Fabric</title>
       
       
-      <link rel="stylesheet" type="text/css" href="css/fabricbootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="css/fabric.css">
-      <link rel="stylesheet" href="css/fabricresponsive.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/fabricbootstrap.min.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/fabric.css' %}">
+      <link rel="stylesheet" href="{% static 'css/fabricresponsive.css' %}">
       
       <!-- <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
@@ -22,8 +23,8 @@
       
       <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:400,700&display=swap&subset=latin-ext" rel="stylesheet">
       
-      <link rel="stylesheet" href="css/fabricowl.carousel.min.css">
-      <link rel="stylesheet" href="css/fabricowl.theme.default.min.css">
+      <link rel="stylesheet" href="{% static 'css/fabricowl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/fabricowl.theme.default.min.css' %}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
    </head>
@@ -38,21 +39,21 @@
                   <a href="#">Measurement Tutorial</a>
                
                </div>
-               <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
+               <span class="toggle_icon" onclick="openNav()"><img src="{% static 'images/toggle-icon.png' %}"></span>
             
                <form class="form-inline ">
                   <div class="login_text">
                      <ul>
-                        <li><a href="#"><img src="images/user-icon.png"></a></li>
-                        <li><a href="#"><img src="images/bag-icon.png"></a></li>
-                        <li><a href="#"><img src="images/search-icon.png"></a></li>
+                        <li><a href="#"><img src="{% static 'images/user-icon.png' %}"></a></li>
+                        <li><a href="#"><img src="{% static 'images/bag-icon.png' %}"></a></li>
+                        <li><a href="#"><img src="{% static 'images/search-icon.png' %}"></a></li>
                      </ul>
                   </div>
                </form>
             </nav>
          </div>
       </div>
-    
+
       <div class="banner_section layout_padding">
          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -65,7 +66,7 @@
                            <div class="read_bt"><a href="#">Order Now</a></div>
                         </div>
                         <div class="col-sm-6">
-                           <div class="banner_img"><img src="fabric1.jpg"></div>
+                           <div class="banner_img"><img src="{% static 'image/fabric1.jpg' %}"></div>
                         </div>
                      </div>
                   </div>
@@ -79,7 +80,7 @@
                            <div class="read_bt"><a href="#">Order Now</a></div>
                         </div>
                         <div class="col-sm-6">
-                           <div class="banner_img"><img src="fabric2.jpg"></div>
+                           <div class="banner_img"><img src="{% static 'image/fabric2.jpg' %}"></div>
                         </div>
                      </div>
                   </div>
@@ -94,7 +95,7 @@
                            <div class="read_bt"><a href="#">Buy Now</a></div>
                         </div>
                         <div class="col-sm-6">
-                           <div class="banner_img"><img src="fabric3.jpg"></div>
+                           <div class="banner_img"><img src="{% static 'image/fabric3.jpg' %}"></div>
                         </div>
                      </div>
                   </div>
@@ -109,7 +110,6 @@
             <div class="row">
                <div class="col-sm-12">
                   <h1 class="product_taital">Our Fabric</h1>
-                 
                </div>
             </div>
             <!-- for loop chalaite hobe -->
@@ -119,7 +119,7 @@
                      <div class="product_box">
                         <h4 class="bursh_text">fabric name</h4>
                         
-                        <img src="1.jpeg" class="image_1" alt="pic">
+                        <img src="{% static '/image/1.jpeg' %}" class="image_1" alt="pic">
                         <p class="lorem_text">eikhane fabric er type text </p>
                         <div class="btn_main">
                            <div class="buy_bt">
