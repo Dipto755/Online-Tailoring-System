@@ -14,13 +14,21 @@ class user_model(models.Model):
 class fabric_model(models.Model):
     f_id = models.IntegerField(primary_key=True)
     f_name = models.CharField(max_length=30)
-    f_color = models.CharField(max_length=20)
+    # f_color = models.CharField(max_length=20)
     f_type = models.CharField(max_length=30)
     f_price = models.IntegerField()
+    f_image = models.ImageField(upload_to="TailorApp/fabric", default="")
+    
+    def __str__(self):
+        return self.f_name
 
 class design_model(models.Model):
     d_id = models.IntegerField(primary_key=True)
     d_name = models.CharField(max_length=30)
+    d_image = models.ImageField(upload_to="TailorApp/design", default="")
+    
+    def __str__(self):
+        return self.d_name
 
 class order_model(models.Model):
     o_id = models.IntegerField(primary_key=True)
