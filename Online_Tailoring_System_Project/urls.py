@@ -24,4 +24,5 @@ urlpatterns = [
     path("", tviews.home_view),
     path('login/', tviews.login_view, name='login'),
     path('signup/', tviews.signup_view, name='signup'),
+    path('login/logout', tviews.logout_views, name="logout"),
 ]
