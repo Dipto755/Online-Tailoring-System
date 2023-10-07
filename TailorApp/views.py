@@ -20,7 +20,7 @@ def login_view(request):
         if theUser is not None:
             login(request, theUser)
             fname = theUser.first_name
-            return render(request, 'home.html', {'fname':fname})
+            return render(request, 'homepage.html', {'fname':fname})
         else:
             messages.error(request, "Incorrect username or password!")
             return redirect('login')
