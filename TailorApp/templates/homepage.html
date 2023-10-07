@@ -1,3 +1,4 @@
+{%load static %}
 <!doctype html>
 <html lang="en">
     <head>
@@ -15,13 +16,13 @@
         
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-        <link href="css/homebootstrap.min.css" rel="stylesheet">
+        <link href="{% static 'css/homebootstrap.min.css' %}" rel="stylesheet">
 
-        <link href="css/homebootstrap-icons.css" rel="stylesheet">
+        <link href="{% static 'css/homebootstrap-icons.css' %}" rel="stylesheet">
 
-        <link href="css/homemagnific-popup.css" rel="stylesheet">
+        <link href="{% static 'css/homemagnific-popup.css' %}" rel="stylesheet">
 
-        <link href="css/homepage.css" rel="stylesheet">
+        <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
         
     </head>
     
@@ -59,8 +60,10 @@
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_5"><small class="small-title"><strong class="text-warning">05</strong></small> Contact</a>
                         </li>
-                       <a id="user_name">Hello,User</a>
-                       
+                        <a id="user_name">Hello,User</a>
+                        <li class="nav-item" >
+                            <a class="nav-link click-scroll" href="#">Logout</a>
+                        </li>
                     </ul>
                 <div>
                         
@@ -91,7 +94,7 @@
                                     </div>
 
                                     <div class="carousel-image-wrap">
-                                        <img src="home1.jpg" class="img-fluid carousel-image" alt="">
+                                        <img src="{% static 'image/home1.jpg' %}" class="img-fluid carousel-image" alt="">
                                     </div>
                                 </div>
 
@@ -136,7 +139,7 @@
 
                         <div class="col-lg-6 col-12 mb-5 mb-lg-0">
                             <div class="about-image-wrap h-100">
-                                <img src="home3.jpg" class="img-fluid about-image" alt="">
+                                <img src="{% static 'image/home3.jpg' %}" class="img-fluid about-image" alt="">
                             </div>
                         </div>
 
@@ -202,7 +205,6 @@
                                         <h3>Design Elegance</h3>
 
                                         <span>"Our website provides a wide range of dress designs that you can choose from to create your own customized dress. It's easy to pick your favorite style and personalize your dress to match your unique taste and fashion preferences."</span>
-                                       
                                     </button>
                                     <a class="custom-btn btn custom-bg-white" href="#">Explore Design</a>
 
@@ -214,7 +216,7 @@
                         <div class="col-lg-6 col-12">
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-business" role="tabpanel" aria-labelledby="nav-intro-tab">
-                                    <img src="home4.jpg" class="img-fluid" alt="">
+                                    <img src="{% static 'image/home4.jpg' %}" class="img-fluid" alt="">
 
                                 </div>
 
@@ -238,8 +240,8 @@
 
                         <div class="col-lg-4 col-12">
                             <div class="projects-thumb projects-thumb-small">
-                                <a href="https://www.youtube.com/watch?v=FVNogh7wNQY">
-                                    <img src="home5.jpg" class="img-fluid projects-image" alt="">
+                                <a href="https://www.youtube.com/watch?v=FVNogh7wNQY" target = "_blank">
+                                    <img src="{% static 'image/home5.jpg' %}" class="img-fluid projects-image" alt="">
                                     
                                     <div class="projects-info">
                                         <div class="projects-title-wrap">
@@ -260,8 +262,8 @@
 
                         <div class="col-lg-4 col-12">
                             <div class="projects-thumb projects-thumb-small">
-                                <a href="https://www.youtube.com/watch?v=FVNogh7wNQY">
-                                    <img src="home6.jpg" class="img-fluid projects-image" alt="">
+                                <a href="https://www.youtube.com/watch?v=FVNogh7wNQY" target = "_blank">
+                                    <img src="{% static 'image/home6.jpg' %}" class="img-fluid projects-image" alt="">
                                     
                                     <div class="projects-info">
                                         <div class="projects-title-wrap">
@@ -282,8 +284,8 @@
 
                         <div class="col-lg-4 col-12">
                             <div class="projects-thumb projects-thumb-small">
-                                <a href="https://www.youtube.com/watch?v=W00biUTh5pg">
-                                    <img src="home7.png" class="img-fluid projects-image" alt="">
+                                <a href="https://www.youtube.com/watch?v=W00biUTh5pg" target = "_blank">
+                                    <img src="{% static 'image/home7.png' %}" class="img-fluid projects-image" alt="">
                                     
                                     <div class="projects-info">
                                         <div class="projects-title-wrap">
