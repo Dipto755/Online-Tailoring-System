@@ -26,4 +26,5 @@ urlpatterns = [
     path('signup/', tviews.signup_view, name='signup'),
     path('login/logout', tviews.logout_views, name="logout"),
     path('fabric/', tviews.fabric_view, name = "fabric"),
+    path('home/fabric/', tviews.fabric_view, name = "fabric"),
 ]
