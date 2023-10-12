@@ -14,13 +14,16 @@
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="homepage">Home</a></li>
             <li><a href="#">Design</a></li>
             <li><a href="#">Fabric</a></li>
             <li><a href="#">Measurement Tutorial</a></li>
         </ul>
-        <h3>Hello,User</h3>
-        <h3> <a href="logout">Logout</a> </h3>
+        <h3>
+            Hello,User
+            {% comment %} <a href="logout">Logout</a> {% endcomment %}
+        </h3>
+        {% comment %} <h3> <a href="logout">Logout</a> </h3> {% endcomment %}
         {% comment %} <ul>
             <li><a href="logout">Logout</a></li>
         </ul> {% endcomment %}
@@ -36,23 +39,39 @@
         
         <h3>Update Profile</h3>
 
-        <label for="name">Name</label>
-        <input type="text" placeholder="name" name="username" id="username">
+        <label for="first_name">First Name</label>
+        <input type="text" placeholder="First name" name="first_name" id="first_name" value = {{user.first_name}}>
+        
+        <label for="last_name">Last Name</label>
+        <input type="text" placeholder="Last name" name="last_name" id="last_name" value = {{user.last_name}}>
 
         <label for="email">Email</label>
-        <input type="email" placeholder="Email or Phone" name="email" id="email">
+        <input type="email" placeholder="Email" name="email" id="email" value = {{user.email}}>
 
         <label for="address">Address</label>
-        <input type="address" placeholder="Address" id="address" name="address">
+        <input type="address" placeholder="Address" id="address" name="address" value = {{data.u_address}}>
 
-        <label for="password1">Password*</label>
+        <label for="number">Number</label>
+        <input type="number" placeholder="COntact Number" id="number" name="number" value = {{data.u_cont_number}}>
+
+        <label for="gender">Gender</label>
+        {% comment %} <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="other">Other {% endcomment %}
+        <select name="gender" id="gender" class="gender-dropdown">
+            <option value="">--Select Gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        {% comment %} <label for="password1">Password*</label>
         <input type="password" placeholder="Password" id="password1" name="password1">
 
 
         <label for="password2">Confrom Password*</label>
-        <input type="password" placeholder="Confrom Password" id="password2" name="password2">
+        <input type="password" placeholder="Confrom Password" id="password2" name="password2"> {% endcomment %}
         <center>
-            <button type="submit">Submit</button>
+            <button type="submit" name = "changeprofile">Submit</button>
         </center>
 
     </form>

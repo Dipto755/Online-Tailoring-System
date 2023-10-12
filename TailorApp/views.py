@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import fabric_model
+from .models import fabric_model, user_model
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -74,5 +74,28 @@ def fabric_view(request):
 
 @login_required
 def update_profile_view(request):
+    context = {}
+    data = user_model.objects.get(user__id = request.user.id)
+    context["data"] = data
     
+    if request.method == "POST":
+        fn = request.POST["first_name"]
+        ln = request.POST["last_name"]
+        em = request.POST["email"]
+        add = request.POST["address"]
+        nmbr = request.POST["number"]
+        gndr = request.POST["gender"]
+        
+        usr = User.objects.get(id=request.user.id)
+        usr.first_name = fn
+        usr.last_name = ln
+        usr.email = em
+        
+        usr.save()
+        
+        data.u_address = add
+        data.u_cont_number = nmbr
+        data.u_gender = gndr
+        
+        data.save()
     return render(request, 'update_profile.html')

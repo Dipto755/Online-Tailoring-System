@@ -1,15 +1,21 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class user_model(models.Model):
-    u_id = models.IntegerField(primary_key=True)
-    u_name = models.CharField(max_length=30)
-    u_email = models.EmailField(max_length=30)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # u_id = models.IntegerField(primary_key=True)
+    # u_name = models.CharField(max_length=30)
+    # u_email = models.EmailField(max_length=30)
     u_address = models.TextField()
     u_cont_number = models.CharField(max_length=11)
     u_gender = models.CharField(max_length=10)
-    password = models.CharField(max_length=30)
+    # password = models.CharField(max_length=30)
+    updateon = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.user.username
 
 class fabric_model(models.Model):
     f_id = models.IntegerField(primary_key=True)
