@@ -23,8 +23,10 @@ urlpatterns = [
     path("home/", tviews.home_view, name='home'),
     path("", tviews.home_view),
     path('login/', tviews.login_view, name='login'),
+    path('homepage/', tviews.homepage_view, name = 'homepage'),
     path('signup/', tviews.signup_view, name='signup'),
-    path('login/logout', tviews.logout_views, name="logout"),
+    path('homepage/logout', tviews.logout_views, name="logout"),
     path('fabric/', tviews.fabric_view, name = "fabric"),
-    path('home/fabric/', tviews.fabric_view, name = "fabric"),
+    path('homepage/fabric/', tviews.fabric_view, name = "fabric"),
+    path('homepage/update-profile/', tviews.update_profile_view, name = "update-profile"),
 ]

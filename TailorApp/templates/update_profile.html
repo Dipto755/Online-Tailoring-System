@@ -1,7 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
     <title>Profile Update</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="update_profile.css"> 
+    <link rel="stylesheet" href="{% static 'css/update_profile.css' %}"> 
 </head>
 <body>
     <div class="navbar">
@@ -19,7 +19,17 @@
             <li><a href="#">Fabric</a></li>
             <li><a href="#">Measurement Tutorial</a></li>
         </ul>
-       <h3>Hello,User</h3>
+        <h3>Hello,User</h3>
+        <h3> <a href="logout">Logout</a> </h3>
+        {% comment %} <ul>
+            <li><a href="logout">Logout</a></li>
+        </ul> {% endcomment %}
+    {% comment %} </div>
+        <ul>
+            <li><a href="logout">Logout</a></li>
+        </ul>
+    <div> {% endcomment %}
+        
     </div>
     
     <form action="" method="post">
@@ -44,7 +54,7 @@
         <center>
             <button type="submit">Submit</button>
         </center>
-       
+
     </form>
 </body>
 </html>

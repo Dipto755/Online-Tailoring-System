@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .models import fabric_model
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -20,14 +21,22 @@ def login_view(request):
         
         if theUser is not None:
             login(request, theUser)
-            fname = theUser.first_name
-            return render(request, 'homepage.html', {'fname':fname})
+            fname = theUser
+            
+            # next_url = request.GET.get('', '/')
+            # return render(request, 'homepage.html', {'fname':fname})
+            return redirect('homepage')
         else:
             messages.error(request, "Incorrect username or password!")
             return redirect('login')
         
     
     return render(request, 'login.html')
+
+@login_required
+def homepage_view(request):
+    
+    return render(request, 'homepage.html')
 
 def signup_view(request):
     
@@ -61,3 +70,9 @@ def fabric_view(request):
     
     return render(request, 'fabric.html' ,
                 {'fabric_list' : fabric_list})
+    
+
+@login_required
+def update_profile_view(request):
+    
+    return render(request, 'update_profile.html')
