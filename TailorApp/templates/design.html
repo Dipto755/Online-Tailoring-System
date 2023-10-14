@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -12,9 +13,9 @@
       <title>Designs</title>
       
       
-      <link rel="stylesheet" type="text/css" href="css/designbootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="css/design.css">
-      <link rel="stylesheet" href="css/designresponsive.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/designbootstrap.min.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}">
+      <link rel="stylesheet" href="{% static 'css/designresponsive.css' %}">
       
       <!-- <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
@@ -22,8 +23,8 @@
       
       <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:400,700&display=swap&subset=latin-ext" rel="stylesheet">
       
-      <link rel="stylesheet" href="css/fabricowl.carousel.min.css">
-      <link rel="stylesheet" href="css/fabricowl.theme.default.min.css">
+      <link rel="stylesheet" href="{% static 'css/fabricowl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/fabricowl.theme.default.min.css' %}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
    </head>
@@ -38,21 +39,21 @@
                   <a href="#">Measurement Tutorial</a>
                
                </div>
-               <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
+               <span class="toggle_icon" onclick="openNav()"><img src="image/toggle-icon.png"></span>
             
                <form class="form-inline ">
                   <div class="login_text">
                      <ul>
-                        <li><a href="#"><img src="images/user-icon.png"></a></li>
-                        <li><a href="#"><img src="images/bag-icon.png"></a></li>
-                        <li><a href="#"><img src="images/search-icon.png"></a></li>
+                        <li><a href="#"><img src="image/user-icon.png"></a></li>
+                        <li><a href="#"><img src="image/bag-icon.png"></a></li>
+                        <li><a href="#"><img src="image/search-icon.png"></a></li>
                      </ul>
                   </div>
                </form>
             </nav>
          </div>
       </div>
-    
+
       <div class="banner_section layout_padding">
          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">

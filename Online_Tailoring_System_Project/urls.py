@@ -31,6 +31,7 @@ urlpatterns = [
     path('homepage/logout', tviews.logout_views, name="logout"),
     path('fabric/', tviews.fabric_view, name = "fabric"),
     path('homepage/fabric/', tviews.fabric_view, name = "fabric"),
+    path('homepage/design/', tviews.design_view, name="design"),
     path('homepage/user-details/', tviews.user_details_view, name = "user-details"),
     path('homepage/user-details/update-profile/', tviews.update_profile_view, name = "update-profile"),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

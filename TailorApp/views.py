@@ -68,9 +68,11 @@ def logout_views(request):
 def fabric_view(request):
     fabric_list = fabric_model.objects.all()
     
-    return render(request, 'fabric.html' ,
-                {'fabric_list' : fabric_list})
+    return render(request, 'fabric.html' , {'fabric_list' : fabric_list})
+
+def design_view(request):
     
+    return render(request, 'design.html')
 
 @login_required
 def user_details_view(requset):
