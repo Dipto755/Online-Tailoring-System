@@ -26,6 +26,7 @@ urlpatterns = [
     path("home/", tviews.home_view, name='home'),
     path("", tviews.home_view, name='home'),
     path('login/', tviews.login_view, name='login'),
+    # path('homepage/<str:fname>/', tviews.homepage_view, name = 'homepage'),
     path('homepage/', tviews.homepage_view, name = 'homepage'),
     path('signup/', tviews.signup_view, name='signup'),
     path('homepage/logout', tviews.logout_views, name="logout"),

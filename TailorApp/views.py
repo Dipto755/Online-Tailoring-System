@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -25,7 +25,11 @@ def login_view(request):
             
             # next_url = request.GET.get('', '/')
             # return render(request, 'homepage.html', {'fname':fname})
+            # return redirect('homepage', fname = fname)
             return redirect('homepage')
+            # return render(request, 'homepage.html', {fname})
+            # url = "homepage/?user={}".format(fname)
+            # return redirect(url)
         else:
             messages.error(request, "Incorrect username or password!")
             return redirect('login')
@@ -35,7 +39,11 @@ def login_view(request):
 
 @login_required
 def homepage_view(request):
-    
+    # fname = request.GET.get('fname', None)
+    # return render(request, 'homepage.html', {'fname' : fname})
+    # if request.method == "GET":
+    #     fname = request.GET.get('user')
+    # return render(request, 'homepage.html', {'fname' : fname})
     return render(request, 'homepage.html')
 
 def signup_view(request):
