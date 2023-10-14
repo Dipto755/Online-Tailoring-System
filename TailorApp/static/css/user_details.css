@@ -3,10 +3,11 @@ body{
     color: #a00b0b;
     text-align: left;
     background-color: #000000d3; 
-    background-image:url('u_detail_bg.jpg'); 
+    /* background-image:url('../image/u_detail_bg.jpg'); */
+    background-image: url('../image/u_detail_bg.jpg');
     font-family: 'Noto Sans NKo Unjoined', sans-serif;
-   font-family: 'Roboto', sans-serif;
-  font-family: 'Young Serif', serif;  
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Young Serif', serif;  
 }
 .main-body {
     padding: 75px;

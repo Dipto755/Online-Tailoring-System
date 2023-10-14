@@ -73,6 +73,17 @@ def fabric_view(request):
     
 
 @login_required
+def user_details_view(requset):
+
+    # if requset.user.is_authenticated:
+        
+    #     return render(requset, 'user_details.html')
+    # else:
+    #     return redirect('login')
+    data = user_model.objects.get(user__id = requset.user.id)
+    
+    return render(requset, 'user_details.html', {'data' : data})
+@login_required
 def update_profile_view(request):
     context = {}
     data = user_model.objects.get(user__id = request.user.id)

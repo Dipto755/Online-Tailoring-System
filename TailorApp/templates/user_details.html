@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+NKo+Unjoined&family=Roboto:ital,wght@1,100&family=Young+Serif&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="user_details.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+NKo+Unjoined&family=Roboto:ital,wght@1,100&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/user_details.css' %}">
   </head>
 <body>
 
@@ -22,19 +23,19 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="u_logo.PNG" alt="Profile Photo" class="rounded-circle" width="150">
+                    <img src="{% static 'image/u_logo.PNG' %}" alt="Profile Photo" class="rounded-circle" width="150">
                     <div class="mt-4">
-                      <h4>User Name</h4>
+                      <h4>{{user.username}}'s profile</h4>
                       <div class="col-sm-12">
-                        <a class="btn1" target="__blank" href="#">Home</a>
+                        <a class="btn1" href="http://127.0.0.1:8000/homepage/">Home</a>
                       </div>
                       
-                     
+
                     </div>
                   </div>
                 </div>
               </div>
-             
+
             </div>
             <div class="col-md-8">
               <div class="card mb-3">
@@ -42,11 +43,20 @@
                   <div class="row">
                     <h1 class="d-flex flex-column align-items-center text-center mb-5">Profile Details</h1>
                     <div class="col-sm-3">
-                     
-                      <h6 class="mb-0">Full Name</h6>
+
+                      <h6 class="mb-0">First Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <!-- Kenneth Valdez -->
+                      {{user.first_name}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Last Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{user.last_name}}
                     </div>
                   </div>
                   <hr>
@@ -55,7 +65,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <!-- fip@jukmuh.al -->
+                      {{user.email}}
                     </div>
                   </div>
                   <hr>
@@ -64,20 +74,20 @@
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <!-- address -->
+                      {{data.u_address}}
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
+                      <h6 class="mb-0">Contact Number</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <!-- (320) 380-4539 -->
+                      {{data.u_cont_number}}
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
+                  {% comment %} <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Password</h6>
                     </div>
@@ -85,10 +95,10 @@
                      ******
                     </div>
                   </div>
-                  <hr>
+                  <hr> {% endcomment %}
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="#">Edit</a>
+                      <a class="btn btn-info " href="update-profile">Edit</a>
                     </div>
                   </div>
                 </div>

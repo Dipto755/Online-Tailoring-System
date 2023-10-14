@@ -25,7 +25,7 @@ class fabric_model(models.Model):
     # f_color = models.CharField(max_length=20)
     f_type = models.CharField(max_length=30)
     f_price = models.IntegerField()
-    f_image = models.ImageField(upload_to="TailorApp/fabric", default="")
+    f_image = models.ImageField(upload_to="fabric/images", default="")
     
     def __str__(self):
         return self.f_name

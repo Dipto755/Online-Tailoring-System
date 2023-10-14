@@ -18,15 +18,19 @@ from django.contrib import admin
 from django.urls import path
 import TailorApp.views as tviews
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("home/", tviews.home_view, name='home'),
-    path("", tviews.home_view),
+    path("", tviews.home_view, name='home'),
     path('login/', tviews.login_view, name='login'),
     path('homepage/', tviews.homepage_view, name = 'homepage'),
     path('signup/', tviews.signup_view, name='signup'),
     path('homepage/logout', tviews.logout_views, name="logout"),
     path('fabric/', tviews.fabric_view, name = "fabric"),
     path('homepage/fabric/', tviews.fabric_view, name = "fabric"),
-    path('homepage/update-profile/', tviews.update_profile_view, name = "update-profile"),
-]
+    path('homepage/user-details/', tviews.user_details_view, name = "user-details"),
+    path('homepage/user-details/update-profile/', tviews.update_profile_view, name = "update-profile"),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
