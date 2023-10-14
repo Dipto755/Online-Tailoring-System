@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
     <title>Salowar Measurement</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,23 +10,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="salowar.css"> 
+<link rel="stylesheet" href="{% static 'css/salowar.css' %}"> 
 </head>
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Design</a></li>
-            <li><a href="#">Fabric</a></li>
-            <li><a href="#">Measurement Tutorial</a></li>
+            <li><a href="http://127.0.0.1:8000/homepage/">Home</a></li>
+            <li><a href="http://127.0.0.1:8000/homepage/design/">Design</a></li>
+            <li><a href="http://127.0.0.1:8000/homepage/fabric/">Fabric</a></li>
+            <li><a href="http://127.0.0.1:8000/homepage/#section_4">Measurement Tutorial</a></li>
         </ul>
-       <h3>Hello,User</h3>
+        <h3>Hello,User</h3>
     </div>
     
     <form action="" method="post">
         
         <h3>Salowar's Measurement</h3>
-       
+
         <label for="length">Length</label>
         <input type="text" placeholder="length" name="length" id="length">
 
@@ -44,7 +45,7 @@
         <center>
             <button type="submit">Submit</button>
         </center>
-       
+
     </form>
 </body>
 </html>

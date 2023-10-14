@@ -30,15 +30,37 @@ class fabric_model(models.Model):
     def __str__(self):
         return self.f_name
 
-class design_model(models.Model):
-    d_id = models.IntegerField(primary_key=True)
-    d_name = models.CharField(max_length=30)
-    d_image1 = models.ImageField(upload_to="design/images", default="")
-    d_image2 = models.ImageField(upload_to="design/images", default="")
-    d_image3 = models.ImageField(upload_to="design/images", default="")
+class design_kameez_model(models.Model):
+    dk_id = models.IntegerField(primary_key=True)
+    dk_name = models.CharField(max_length=30)
+    dk_price = models.IntegerField()
+    dk_image1 = models.ImageField(upload_to="design/design_kameez/images", default="")
+    dk_image2 = models.ImageField(upload_to="design/design_kameez/images", default="")
+    dk_image3 = models.ImageField(upload_to="design/design_kameez/images", default="")
     
     def __str__(self):
-        return self.d_name
+        return self.dk_name
+
+class design_salowaar_model(models.Model):
+    ds_id = models.IntegerField(primary_key=True)
+    ds_name = models.CharField(max_length=30)
+    ds_price = models.IntegerField()
+    ds_image1 = models.ImageField(upload_to="design/images", default="")
+    ds_image2 = models.ImageField(upload_to="design/images", default="")
+    
+    def __str__(self):
+        return self.dk_name
+
+class design_shirt_model(models.Model):
+    dsh_id = models.IntegerField(primary_key=True)
+    dsh_name = models.CharField(max_length=30)
+    dsh_price = models.IntegerField()
+    dsh_image1 = models.ImageField(upload_to="design/design_kameez/images", default="")
+    dsh_image2 = models.ImageField(upload_to="design/design_kameez/images", default="")
+    dsh_image3 = models.ImageField(upload_to="design/design_kameez/images", default="")
+    
+    def __str__(self):
+        return self.dk_name
 
 class order_model(models.Model):
     o_id = models.IntegerField(primary_key=True)

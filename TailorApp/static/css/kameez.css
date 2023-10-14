@@ -7,10 +7,10 @@
 }
 body{
     background-color: #f1f1f3;
-    background-image: url('measurement_pic.jpg');
+    background-image: url('../image/measurement_pic.jpg');
     
     background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-size: cover;
 
 }

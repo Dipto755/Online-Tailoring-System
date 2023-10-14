@@ -70,6 +70,7 @@ def fabric_view(request):
     
     return render(request, 'fabric.html' , {'fabric_list' : fabric_list})
 
+@login_required
 def design_view(request):
     
     return render(request, 'design.html')
@@ -112,3 +113,18 @@ def update_profile_view(request):
         
         data.save()
     return render(request, 'update_profile.html')
+
+@login_required
+def measurement_kameez_views(request):
+    
+    return render(request, 'measurement_kameez.html')
+
+@login_required
+def measurement_salowaar_view(request):
+    
+    return render(request, 'measurement_salowaar.html')
+
+@login_required
+def measurement_shirt_view(request):
+    
+    return render(request, 'measurement_shirt.html')

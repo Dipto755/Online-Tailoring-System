@@ -34,4 +34,7 @@ urlpatterns = [
     path('homepage/design/', tviews.design_view, name="design"),
     path('homepage/user-details/', tviews.user_details_view, name = "user-details"),
     path('homepage/user-details/update-profile/', tviews.update_profile_view, name = "update-profile"),
+    path('homepage/measurement-kameez/', tviews.measurement_kameez_views, name='measurement-kameez'),
+    path('homepage/measurement-salowaar/', tviews.measurement_salowaar_view, name='measurement-salwar'),
+    path('homepage/measurement-shirt/', tviews.measurement_shirt_view, name='measurement-shirt'),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
