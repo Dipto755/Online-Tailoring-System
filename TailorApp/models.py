@@ -33,7 +33,7 @@ class fabric_model(models.Model):
 class design_model(models.Model):
     d_id = models.IntegerField(primary_key=True)
     d_name = models.CharField(max_length=30)
-    d_image = models.ImageField(upload_to="TailorApp/design", default="")
+    d_image = models.ImageField(upload_to="design/images", default="")
     
     def __str__(self):
         return self.d_name
