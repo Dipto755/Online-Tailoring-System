@@ -71,7 +71,7 @@ class order_model(models.Model):
 class payment_model(models.Model):
     p_id = models.IntegerField(primary_key=True)
     p_method = models.CharField(max_length=20)
-    
+
 
 class measurementForShirt_model(models.Model):
     s_productID = models.IntegerField(primary_key=True)
