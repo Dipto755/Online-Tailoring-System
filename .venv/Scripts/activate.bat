@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\CSE 410\lab10\Online-Tailoring-System\.venv
+set VIRTUAL_ENV=E:\UAP\doc\4.1\CSE 410\Online-Tailoring-System\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 
