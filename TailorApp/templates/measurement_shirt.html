@@ -16,15 +16,15 @@
     <div class="navbar">
         <ul>
             <li><a href="http://127.0.0.1:8000/homepage/">Home</a></li>
-            <li><a href="http://127.0.0.1:8000/homepage/design/">Design</a></li>
+            {% comment %} <li><a href="http://127.0.0.1:8000/homepage/design/">Design</a></li>
             <li><a href="http://127.0.0.1:8000/homepage/fabric/">Fabric</a></li>
-            <li><a href="http://127.0.0.1:8000/homepage/#section_4">Measurement Tutorial</a></li>
+            <li><a href="http://127.0.0.1:8000/homepage/#section_4">Measurement Tutorial</a></li> {% endcomment %}
         </ul>
         <h3>Hello,User</h3>
     </div>
     
     <form action="" method="post">
-        
+        {% csrf_token %}
         <h3>Shirt's Measurement</h3>
 
         <label for="c_length">Collar Length</label>

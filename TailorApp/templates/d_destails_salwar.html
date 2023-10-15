@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Details for Kameez</title>
-    <link rel="stylesheet" href="d_details_kameez.css">
+    <link rel="stylesheet" href="{% static 'css/d_details_kameez.css' %}">
 </head>
 <body>
     <div class="pagination">
@@ -12,23 +13,23 @@
     </div>
     <section class="product-container">
         <div class="img-card">
-            <img src="3.jpg" alt="" id="featured-image">
+            <img src="{{design_list.ds_image1.url}}" alt="" id="featured-image">
           
         </div>
         <div class="product-info">
-            <h3>Design name</h3>
-            <h5>Tailor Cost: $140</h5>
+            <h3>{{design_list.ds_name}}</h3>
+            <h5>Tailor Cost: {{design_list.ds_price}}</h5>
             <div>
                 
-                <div class="delivery">
+                {% comment %} <div class="delivery">
                     <p>TYPE</p>
                 </div>
                 <hr>
                 <div class="delivery">
                     <p>Dress Type</p> 
-                    <p>type dibi</p> 
+                    <p>{{design_list.ds_type}}</p> 
                     
-                </div>
+                </div> {% endcomment %}
                 <hr>
                 
             </div>
@@ -46,7 +47,7 @@
 
 
             <div class="quantity">
-                <a id="buttona">Place Order</a>
+                <a id="buttona" href = "measurement-salwar">Place Order</a>
             </div>
 
             

@@ -16,9 +16,9 @@
     <div class="navbar">
         <ul>
             <li><a href="http://127.0.0.1:8000/homepage/">Home</a></li>
-            <li><a href="http://127.0.0.1:8000/homepage/design/">Design</a></li>
+            {% comment %} <li><a href="http://127.0.0.1:8000/homepage/design/">Design</a></li>
             <li><a href="http://127.0.0.1:8000/homepage/fabric/">Fabric</a></li>
-            <li><a href="http://127.0.0.1:8000/homepage/#section_4">Measurement Tutorial</a></li>
+            <li><a href="http://127.0.0.1:8000/homepage/#section_4">Measurement Tutorial</a></li> {% endcomment %}
         </ul>
         <h3>Hello,User</h3>
     </div>
@@ -50,7 +50,7 @@
         <input type="text" placeholder="neck_width" name="neck_width" id="neck_width">
 
         <center>
-            <button type="submit">Submit</button>
+            <button type="submit" ><a href="payment">Submit</a></button>
         </center>
 
     </form>

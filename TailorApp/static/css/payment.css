@@ -29,13 +29,13 @@ body{
 }
 .card-body{
     padding: 2rem 5rem 5rem 5rem;
-    background-image: url("payment.jpg");
+    background-image: url("../image/payment.jpg");
 
 }
 @media(max-width:768px){
     .card-body{
         padding: 0 1rem 1rem 1rem;
-        background-image: url("payment.jpg");
+        background-image: url("../image/payment.jpg");
         /* background-size: cover;
         background-repeat: no-repeat; */
     }  

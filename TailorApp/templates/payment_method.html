@@ -1,6 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="payment_method.css">
+    <link rel="stylesheet" href="{% static 'css/payment_method.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
@@ -20,13 +21,13 @@
         <!-- <img id="img1" src="https://image.flaticon.com/icons/png/512/78/78075.png"> -->
         <div id="divaa1">
           <a id="btna1" href="#">payment</a>
-          <img id="img2" src="cash.png">
+          <img id="img2" src="{% static 'image/cash.png' %}">
           <div id="divaaa1"></div>
         </div>
         <div id="divaa2">
-          <img id="img3" src="creditcard.jpg">
+          <img id="img3" src="{% static '/image/creditcard.jpg' %}">
           <div id="divaaa2"></div>
-          <a id="btnb1" href="#">payment</a>
+          <a id="btnb1" href="payment-method">payment</a>
           <!-- <input id="btnb1" type="button" value="Phone">
           <input id="btnb2" type="button" value="Call"> -->
         </div>

@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirec
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import fabric_model, user_model, type_model, design_kameez_model, design_salowaar_model, design_shirt_model, measureForSalwar_model, measurementForKameez_model,measurementForShirt_model
+from .models import fabric_model, user_model, type_model, design_kameez_model, design_salowaar_model, design_shirt_model, measureForSalwar_model, measurementForKameez_model,measurementForShirt_model, kameez_order_model, salowaar_order_model, shirt_order_model
 from django.contrib.auth.decorators import login_required
 
 
@@ -62,6 +62,7 @@ def signup_view(request):
         myuser.last_name = lname
         
         myuser.save()
+        
         
         messages.success(request, "Your account has been successfully created.")
         
@@ -161,9 +162,9 @@ def update_profile_view(request):
 
 @login_required
 def measurement_kameez_views(request):
-    
-    data = measurementForKameez_model.objects.get(user = request.user.id)
-    
+    # context = {}
+    # data = measurementForKameez_model()
+    # context["data"] = data
     if request.method == "POST":
         ln = request.POST["length"]
         bln = request.POST["body"]
@@ -174,6 +175,9 @@ def measurement_kameez_views(request):
         nln = request.POST["neck_length"]
         nwth = request.POST["neck_width"]
         
+        data = measurementForKameez_model(k_length = ln, k_body_length = bln, k_shoulder_length=sln, k_waist_length=wln, k_hip_length=hln,k_hand_width=handwth,k_neck_length=nln, k_neck_width = nwth)
+        
+        data.save()
         
     
     return render(request, 'measurement_kameez.html')
@@ -181,42 +185,91 @@ def measurement_kameez_views(request):
 @login_required
 def measurement_salowaar_view(request):
     
+    if request.method == "POST":
+        ln = request.POST["length"]
+        wln = request.POST["waist"]
+        hln = request.POST["hip"]
+        tln = request.POST["thigh"]
+        wth = request.POST["width"]
+        
+        data = measureForSalwar_model(sl_length = ln, sl_waist_length=wln, sl_hip_length=hln,sl_thigh_length=  tln, sl_width=wth)
+        
+        data.save()
+    
     return render(request, 'measurement_salowaar.html')
 
 @login_required
 def measurement_shirt_view(request):
+    
+    if request.method == "POST":
+        cln = request.POST["c_length"]
+        slln = request.POST["s_length"]
+        sln = request.POST["shoulder"]
+        bcp = request.POST["bicep"]
+        chst=request.POST["chest_length"]
+        hln = request.POST["hip_length"]
+        
+        
+        data = measurementForShirt_model(s_collar_length = cln, s_sleeve_length = slln, s_shoulder_length=sln, s_bicep=bcp,s_chest_length=chst,s_hip_length=hln)
+        
+        data.save()
     
     return render(request, 'measurement_shirt.html')
 
 @login_required
 def d_details_kameez_view(request, pk):
     design_id = design_kameez_model.objects.filter(pk = pk).first().dk_id
-    
+    design_list = design_kameez_model.objects.filter(dk_id = design_id).first()
+    # design_list = design_kameez_model.objects
+    # print(design_list.first().dk_id)
     global val_design_id
     def val_design_id():
         return design_id
     
-    context = {'design_id' : design_id}
+    context = {'design_id' : design_id, 'design_list' : design_list}
     
     return render(request, 'd_destails_kameez.html', context)
 
 @login_required
-def d_details_salowaar_view(request):
+def d_details_salowaar_view(request, pk):
+    design_id = design_salowaar_model.objects.filter(pk = pk).first().ds_id
+    design_list = design_salowaar_model.objects.filter(ds_id = design_id).first()
+    # design_list = design_kameez_model.objects
+    # print(design_list.first().dk_id)
+    global val_design_id
+    def val_design_id():
+        return design_id
     
-    return render(request, 'd_destails_salwar.html')
+    context = {'design_id' : design_id, 'design_list' : design_list}
+    
+    return render(request, 'd_destails_salwar.html', context)
+    
+    # return render(request, 'd_destails_salwar.html')
 
 @login_required
 def d_details_shirt_view(request):
     
+    
+    
     return render(request, 'd_destails_shirt.html')
 
 @login_required
-def order_confirm(request):
+def order_confirm_payment_view(request):
     
-    f_id = val_fab()
-    d_id = val_design_id()
-    order_type = val_type()
-    user = request.user.id
+    # f_id = val_fab()
+    # d_id = val_design_id()
+    # order_type = val_type()
+    # # des_id = design_kameez_model.objects.filter(dk_id = d_id).first().dk_id
+    # if order_type == 1:
+        
+    #     orderConf = kameez_order_model(f_id = f_id, o_type="Kameez")
+    #     orderConf.dk_id = d_id
+        
+    #     orderConf.save()
     
     
     return render(request, 'payment_method.html')
+
+def payment_method(request):
+    
+    return render (request, 'payment.html')

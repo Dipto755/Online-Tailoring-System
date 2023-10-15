@@ -13,17 +13,17 @@
     </div>
     <section class="product-container">
         <div class="img-card">
-            <img src="3.jpg" alt="" id="featured-image">
+            <img src="{{design_list.dk_image1.url}}" alt="" id="featured-image">
             <div class="small-Card">
-                <img src="3.jpg" alt="" class="small-Img">
-                <img src="2.jpg" alt="" class="small-Img">
-                <img src="1.jpg" alt="" class="small-Img">
+                <img src="{{design_list.dk_image1.url}}" alt="" class="small-Img">
+                <img src="{{design_list.dk_image2.url}}" alt="" class="small-Img">
+                <img src="{{design_list.dk_image3.url}}" alt="" class="small-Img">
                 
             </div>
         </div>
         <div class="product-info">
-            <h3>Design name</h3>
-            <h5>Tailor Cost: $140</h5>
+            <h3>{{design_list.dk_name}}</h3>
+            <h5>Tailor Cost: {{design_list.dk_price}}</h5>
             <div>
                 
                 <div class="delivery">
@@ -32,19 +32,19 @@
                 <hr>
                 <div class="delivery">
                     <p>Dress Type</p> 
-                    <p>type dibi</p> 
+                    <p>{{design_list.dk_type}}</p> 
                     
                 </div>
                 <hr>
                 <div class="delivery">
-                    <p>Neck Design</p> 
-                    <p>**</p> 
+                    <p>Neck DEsign</p> 
+                    <p>{{design_list.dk_neck}}</p> 
                     
                 </div>
                 <hr>
                 <div class="delivery">
-                    <p>Hand Length</p> 
-                    <p>1-3 business days</p> 
+                    <p>Sleeve</p> 
+                    <p>{{design_list.dk_sleeve}}</p> 
         
                 </div>
             </div>
@@ -61,12 +61,12 @@
             </div>
 
             <div class="quantity">
-                <a id="buttona">Place Order</a>
+                <a id="buttona" href = "measurement-kameez">Place Order</a>
             </div>
 
             
         </div>
     </section>
-
+    <script src="{% static 'js/cart.js' %}"></script>
 </body>
 </html>

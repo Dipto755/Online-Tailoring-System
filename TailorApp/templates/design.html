@@ -136,8 +136,8 @@
                            <div class="buy_bt">
                               <ul>
             
-                              {% comment %} <li><a href="{% url 'kameez-designs-details' i.dk_id %}">See Details</a></li> {% endcomment %}
-                              <li><a href="http://127.0.0.1:8000/homepage/fabric/type/design/measurement-kameez/">See Details</a></li>
+                              <li><a href="{% url 'kameez-designs-details' i.dk_id %}">See Details</a></li>
+                              {% comment %} <li><a href="http://127.0.0.1:8000/homepage/fabric/type/design/measurement-kameez/">See Details</a></li> {% endcomment %}
                               </ul>
                            </div>
                            <h3 class="price_text">Price {{i.dk_price}} BDT</h3>
@@ -158,7 +158,7 @@
                            <div class="buy_bt">
                               <ul>
             
-                              <li><a href="http://127.0.0.1:8000/homepage/fabric/type/design/measurement-salwar">See details</a></li>
+                              <li><a href="{% url 'salowaar-designs-details' i.ds_id %}">See details</a></li>
                               </ul>
                            </div>
                            <h3 class="price_text">Price {{i.ds_price}} BDT</h3>
