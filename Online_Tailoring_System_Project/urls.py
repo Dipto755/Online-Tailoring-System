@@ -37,7 +37,11 @@ urlpatterns = [
     path('homepage/fabric/type/<int:pk>/design/', tviews.design_view, name="design"),
     path('homepage/user-details/', tviews.user_details_view, name = "user-details"),
     path('homepage/user-details/update-profile/', tviews.update_profile_view, name = "update-profile"),
-    path('homepage/measurement-kameez/', tviews.measurement_kameez_views, name='measurement-kameez'),
-    path('homepage/measurement-salowaar/', tviews.measurement_salowaar_view, name='measurement-salwar'),
-    path('homepage/measurement-shirt/', tviews.measurement_shirt_view, name='measurement-shirt'),
+    path('homepage/fabric/type/design/measurement-kameez/', tviews.measurement_kameez_views, name='measurement-kameez'),
+    path('homepage/fabric/type/design/measurement-salwar/', tviews.measurement_salowaar_view, name='measurement-salwar'),
+    path('homepage/fabric/type/design/measurement-shirt/', tviews.measurement_shirt_view, name='measurement-shirt'),
+    path('homepage/fabric/type/design/kameez-designs-details/<int:pk>', tviews.d_details_kameez_view, name="kameez-designs-details"),
+    path('homepage/fabric/type/design/salowaar-designs-details/<int:pk>', tviews.d_details_salowaar_view, name="salowaar-designs-details"),
+    path('homepage/fabric/type/design/shirt-designs-details/<int:pk>', tviews.d_details_shirt_view, name="shirt-designs-details"),
+    
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

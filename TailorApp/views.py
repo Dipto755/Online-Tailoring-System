@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirec
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import fabric_model, user_model, type_model, design_kameez_model, design_salowaar_model, design_shirt_model
+from .models import fabric_model, user_model, type_model, design_kameez_model, design_salowaar_model, design_shirt_model, measureForSalwar_model, measurementForKameez_model,measurementForShirt_model
 from django.contrib.auth.decorators import login_required
 
 
@@ -162,6 +162,20 @@ def update_profile_view(request):
 @login_required
 def measurement_kameez_views(request):
     
+    data = measurementForKameez_model.objects.get(user = request.user.id)
+    
+    if request.method == "POST":
+        ln = request.POST["length"]
+        bln = request.POST["body"]
+        sln = request.POST["shoulder"]
+        wln = request.POST["waist"]
+        hln = request.POST["hip"]
+        handwth = request.POST["hand_length"]
+        nln = request.POST["neck_length"]
+        nwth = request.POST["neck_width"]
+        
+        
+    
     return render(request, 'measurement_kameez.html')
 
 @login_required
@@ -173,3 +187,36 @@ def measurement_salowaar_view(request):
 def measurement_shirt_view(request):
     
     return render(request, 'measurement_shirt.html')
+
+@login_required
+def d_details_kameez_view(request, pk):
+    design_id = design_kameez_model.objects.filter(pk = pk).first().dk_id
+    
+    global val_design_id
+    def val_design_id():
+        return design_id
+    
+    context = {'design_id' : design_id}
+    
+    return render(request, 'd_destails_kameez.html', context)
+
+@login_required
+def d_details_salowaar_view(request):
+    
+    return render(request, 'd_destails_salwar.html')
+
+@login_required
+def d_details_shirt_view(request):
+    
+    return render(request, 'd_destails_shirt.html')
+
+@login_required
+def order_confirm(request):
+    
+    f_id = val_fab()
+    d_id = val_design_id()
+    order_type = val_type()
+    user = request.user.id
+    
+    
+    return render(request, 'payment_method.html')

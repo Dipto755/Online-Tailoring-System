@@ -107,6 +107,7 @@ class payment_model(models.Model):
 
 class measurementForShirt_model(models.Model):
     s_productID = models.IntegerField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     # s_neck = models.IntegerField()
     # s_sleeve = models.IntegerField()
     # s_chest = models.IntegerField()
@@ -121,6 +122,7 @@ class measurementForShirt_model(models.Model):
 
 class measurementForKameez_model(models.Model):
     k_productID = models.IntegerField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     # k_neckdep = models.IntegerField()
     # k_chest = models.IntegerField()
     # k_waist = models.IntegerField()
@@ -135,6 +137,7 @@ class measurementForKameez_model(models.Model):
     
 class measureForSalwar_model(models.Model):
     sl_productID = models.IntegerField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     # sl_hip = models.IntegerField()
     # sl_len = models.IntegerField()
     sl_length = models.IntegerField()

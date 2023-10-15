@@ -136,10 +136,11 @@
                            <div class="buy_bt">
                               <ul>
             
-                              <li><a href="#">Buy Now</a></li>
+                              {% comment %} <li><a href="{% url 'kameez-designs-details' i.dk_id %}">See Details</a></li> {% endcomment %}
+                              <li><a href="http://127.0.0.1:8000/homepage/fabric/type/design/measurement-kameez/">See Details</a></li>
                               </ul>
                            </div>
-                           <h3 class="price_text">Price {{i.dk_price}}</h3>
+                           <h3 class="price_text">Price {{i.dk_price}} BDT</h3>
                         </div>
                      </div>
                   </div>
@@ -157,10 +158,10 @@
                            <div class="buy_bt">
                               <ul>
             
-                              <li><a href="#">Buy Now</a></li>
+                              <li><a href="http://127.0.0.1:8000/homepage/fabric/type/design/measurement-salwar">See details</a></li>
                               </ul>
                            </div>
-                           <h3 class="price_text">Price {{i.ds_price}}</h3>
+                           <h3 class="price_text">Price {{i.ds_price}} BDT</h3>
                         </div>
                      </div>
                   </div>
@@ -178,10 +179,10 @@
                            <div class="buy_bt">
                               <ul>
             
-                              <li><a href="#">Buy Now</a></li>
+                              <li><a href="http://127.0.0.1:8000/homepage/fabric/type/design/measurement-shirt">See details</a></li>
                               </ul>
                            </div>
-                           <h3 class="price_text">Price {{i.dsh_price}}</h3>
+                           <h3 class="price_text">Price {{i.dsh_price}} BDT</h3>
                         </div>
                      </div>
                   </div>
@@ -207,11 +208,11 @@
       <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
       <script>
          function openNav() {
-           document.getElementById("mySidenav").style.width = "100%";
+            document.getElementById("mySidenav").style.width = "100%";
          }
          
          function closeNav() {
-           document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("mySidenav").style.width = "0";
          }
       </script> 
    </body>
