@@ -110,18 +110,28 @@
             <div class="row">
                <div class="col-sm-12">
                   <h1 class="product_taital">Our Available Designs</h1>
-                 
+
                </div>
             </div>
             <!-- for loop chalaite hobe -->
             <div class="product_section_2 layout_padding">
                <div class="row">
+                  {% comment %} var prefered_design
+                  {% if type_id == 1%} 
+                  prefered_design = kameez_design_list
+                  {% elif type_id == 2 %}
+                  prefered_design = salowaar_design_list
+                  {% else %}
+                  prefered_design = shirt_design_list
+                  {% endif %} {% endcomment %}
+                  {% if type_id == 1 %}
+                  {% for i in kameez_design_list %}
                   <div class="col-lg-3 col-sm-6">
                      <div class="product_box">
                         
-                        <img src="1.jpeg" class="image_1" alt="pic">
-                        <p class="lorem_text">eikhane fabric er type text </p>
-                        <h4 class="bursh_text">Design name</h4>
+                        <img src="{{i.dk_image1.url}}" class="image_1" alt="pic">
+                        <p class="lorem_text">{{i.dk_type}}</p>
+                        <h4 class="bursh_text">{{i.dk_name}}</h4>
                         <div class="btn_main">
                            <div class="buy_bt">
                               <ul>
@@ -129,10 +139,54 @@
                               <li><a href="#">Buy Now</a></li>
                               </ul>
                            </div>
-                           <h3 class="price_text">Price $30</h3>
+                           <h3 class="price_text">Price {{i.dk_price}}</h3>
                         </div>
                      </div>
                   </div>
+                  {% endfor %}
+                  {% endif %}
+                  {% if type_id == 2 %}
+                  {% for i in salowaar_design_list %}
+                  <div class="col-lg-3 col-sm-6">
+                     <div class="product_box">
+                        
+                        <img src="{{i.ds_image1.url}}" class="image_1" alt="pic">
+                        <p class="lorem_text">{{i.ds_type}}</p>
+                        <h4 class="bursh_text">{{i.ds_name}}</h4>
+                        <div class="btn_main">
+                           <div class="buy_bt">
+                              <ul>
+            
+                              <li><a href="#">Buy Now</a></li>
+                              </ul>
+                           </div>
+                           <h3 class="price_text">Price {{i.ds_price}}</h3>
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %}
+                  {% endif %}
+                  {% if type_id == 3 %}
+                  {% for i in shirt_design_list %}
+                  <div class="col-lg-3 col-sm-6">
+                     <div class="product_box">
+                        
+                        <img src="{{i.dsh_image1.url}}" class="image_1" alt="pic">
+                        <p class="lorem_text">{{i.dsh_type}}</p>
+                        <h4 class="bursh_text">{{i.dsh_name}}</h4>
+                        <div class="btn_main">
+                           <div class="buy_bt">
+                              <ul>
+            
+                              <li><a href="#">Buy Now</a></li>
+                              </ul>
+                           </div>
+                           <h3 class="price_text">Price {{i.dsh_price}}</h3>
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %}
+                  {% endif %}
                </div>
             </div>
             <!-- for loop end -->

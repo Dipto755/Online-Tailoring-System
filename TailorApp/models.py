@@ -65,11 +65,40 @@ class design_shirt_model(models.Model):
     def __str__(self):
         return self.dsh_name
 
-class order_model(models.Model):
+class kameez_order_model(models.Model):
+    f_id = models.ForeignKey(fabric_model, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    dk_id = models.ForeignKey(design_kameez_model, on_delete=models.DO_NOTHING)
     o_id = models.IntegerField(primary_key=True)
     o_date = models.DateField()
     o_type = models.CharField(max_length=30)
     o_due = models.DateField()
+    
+class salowaar_order_model(models.Model):
+    f_id = models.ForeignKey(fabric_model, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    ds_id = models.ForeignKey(design_salowaar_model, on_delete=models.DO_NOTHING)
+    o_id = models.IntegerField(primary_key=True)
+    o_date = models.DateField()
+    o_type = models.CharField(max_length=30)
+    o_due = models.DateField()
+    
+class shirt_order_model(models.Model):
+    f_id = models.ForeignKey(fabric_model, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    dsh_id = models.ForeignKey(design_shirt_model, on_delete=models.DO_NOTHING)
+    o_id = models.IntegerField(primary_key=True)
+    o_date = models.DateField()
+    o_type = models.CharField(max_length=30)
+    o_due = models.DateField()
+    
+class type_model(models.Model):
+    ty_id = models.IntegerField(primary_key=True)
+    ty_name = models.CharField(max_length=50)
+    ty_image = models.ImageField(upload_to="types/images", default="")
+    
+    def __str__(self):
+        return self.ty_name
 
 class payment_model(models.Model):
     p_id = models.IntegerField(primary_key=True)

@@ -2,8 +2,9 @@ from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirec
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import fabric_model, user_model
+from .models import fabric_model, user_model, type_model, design_kameez_model, design_salowaar_model, design_shirt_model
 from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -73,15 +74,11 @@ def logout_views(request):
     
     return redirect('home')
 
+@login_required
 def fabric_view(request):
     fabric_list = fabric_model.objects.all()
     
     return render(request, 'fabric.html' , {'fabric_list' : fabric_list})
-
-@login_required
-def design_view(request):
-    
-    return render(request, 'design.html')
 
 @login_required
 def user_details_view(requset):
@@ -94,6 +91,46 @@ def user_details_view(requset):
     data = user_model.objects.get(user__id = requset.user.id)
     
     return render(requset, 'user_details.html', {'data' : data})
+
+
+@login_required
+def type_view(request, pk):
+    
+    fab = fabric_model.objects.filter(pk = pk).first()
+    type_list = type_model.objects.all()
+    
+    global val_fab
+    def val_fab():
+        return fab
+    
+    context = {'fab' : fab, 'type_list' : type_list}
+    
+    return render (request, 'type.html', context)
+
+@login_required
+def design_view(request,pk):
+    # fab = fabric_model.objects.filter(pk = pk).first()
+    type = type_model.objects.filter(pk = pk).first().ty_id
+    kameez_design_list = design_kameez_model.objects.all()
+    salowaar_design_list = design_salowaar_model.objects.all()
+    shirt_design_list = design_shirt_model.objects.all()
+    
+    
+    # type_id = val_type()
+    context = {'type' : type, 'kameez_design_list' : kameez_design_list, 'salowaar_design_list':salowaar_design_list, 'shirt_design_list':shirt_design_list, 'type_id' : type}
+
+    # fab = val_fab()
+    
+    # global val_fab
+    # def val_fab():
+    #     return fab
+    
+    global val_type
+    def val_type():
+        return type
+    
+    return render(request, 'design.html', context)
+
 @login_required
 def update_profile_view(request):
     context = {}
