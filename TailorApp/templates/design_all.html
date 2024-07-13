@@ -117,7 +117,8 @@
             <div class="product_section_2 layout_padding">
                <div class="row">
                   
-                  {% if type_id == 1 %}
+                  <!-- {% if type_id == 1 %} -->
+                   
                   {% for i in kameez_design_list %}
                   <div class="col-lg-3 col-sm-6">
                      <div class="product_box">
@@ -130,7 +131,7 @@
                               <ul>
             
                               <li><a href="{% url 'kameez-designs-details' i.dk_id %}">See Details</a></li>
-                              
+                              <!-- {% comment %} <li><a href="http://127.0.0.1:8000/homepage/fabric/type/design/measurement-kameez/">See Details</a></li> {% endcomment %} -->
                               </ul>
                            </div>
                            <h3 class="price_text">Price {{i.dk_price}} BDT</h3>
@@ -139,7 +140,7 @@
                   </div>
                   {% endfor %}
                   <!-- {% endif %} -->
-                  {% if type_id == 2 %}
+                  <!-- {% if type_id == 2 %} -->
                   {% for i in salowaar_design_list %}
                   <div class="col-lg-3 col-sm-6">
                      <div class="product_box">
@@ -159,8 +160,8 @@
                      </div>
                   </div>
                   {% endfor %}
-                  {% endif %}
-                  {% if type_id == 3 %}
+                  <!-- {% endif %} -->
+                  <!-- {% if type_id == 3 %} -->
                   {% for i in shirt_design_list %}
                   <div class="col-lg-3 col-sm-6">
                      <div class="product_box">
@@ -180,7 +181,7 @@
                      </div>
                   </div>
                   {% endfor %}
-                  {% endif %}
+                  <!-- {% endif %} -->
                </div>
             </div>
             <!-- for loop end -->

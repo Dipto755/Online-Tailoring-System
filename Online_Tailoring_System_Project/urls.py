@@ -32,6 +32,7 @@ urlpatterns = [
     path('homepage/logout', tviews.logout_views, name="logout"),
     path('fabric/', tviews.fabric_view, name = "fabric"),
     path('homepage/fabric/', tviews.fabric_view, name = "fabric"),
+    path('homepage/designs/', tviews.design_view_all, name = "designs"),
     path('homepage/fabric/<int:pk>/type/', tviews.type_view, name = "type"),
     # path('homepage/fabric/type/design/<int:pk>/<int:ty_id>', tviews.design_view, name="design"),
     path('homepage/fabric/type/<int:pk>/design/', tviews.design_view, name="design"),

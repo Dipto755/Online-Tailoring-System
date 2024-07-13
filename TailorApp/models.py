@@ -152,7 +152,8 @@ class measurementForPant_model(models.Model):
     pnt_inseam = models.IntegerField()
     pnt_hsize = models.IntegerField()
     
-class feedback_model(models.Model):
-    f_id = models.IntegerField(primary_key=True)
-    f_review = models.IntegerField()
-    f_comment = models.TextField()
+class contact_model(models.Model):
+    cont_id = models.IntegerField(primary_key=True)
+    cont_name = models.CharField(max_length=50)
+    cont_email = models.EmailField()
+    cont_message = models.TextField()

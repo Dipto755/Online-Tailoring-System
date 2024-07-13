@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirec
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import fabric_model, user_model, type_model, design_kameez_model, design_salowaar_model, design_shirt_model, measureForSalwar_model, measurementForKameez_model,measurementForShirt_model, kameez_order_model, salowaar_order_model, shirt_order_model
+from .models import fabric_model, user_model, contact_model, type_model, design_kameez_model, design_salowaar_model, design_shirt_model, measureForSalwar_model, measurementForKameez_model,measurementForShirt_model, kameez_order_model, salowaar_order_model, shirt_order_model
 from django.contrib.auth.decorators import login_required
 
 
@@ -45,7 +45,19 @@ def homepage_view(request):
     # if request.method == "GET":
     #     fname = request.GET.get('user')
     # return render(request, 'homepage.html', {'fname' : fname})
-    return render(request, 'homepage.html')
+    if request.user.is_authenticated:
+        username = request.user.username
+        
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        
+        contact = contact_model(cont_name = name, cont_email = email, cont_message = message)
+        contact.save()
+        
+        return redirect('homepage')
+    return render(request, 'homepage.html', {'username':username})
 
 def signup_view(request):
     
@@ -75,6 +87,9 @@ def logout_views(request):
     
     return redirect('home')
 
+# def contact_views(request):
+    
+
 @login_required
 def fabric_view(request):
     fabric_list = fabric_model.objects.all()
@@ -97,6 +112,9 @@ def user_details_view(requset):
 @login_required
 def type_view(request, pk):
     
+    if request.user.is_authenticated:
+        username = request.user.username
+    
     fab = fabric_model.objects.filter(pk = pk).first()
     type_list = type_model.objects.all()
     
@@ -104,7 +122,7 @@ def type_view(request, pk):
     def val_fab():
         return fab
     
-    context = {'fab' : fab, 'type_list' : type_list}
+    context = {'fab' : fab, 'type_list' : type_list, 'username':username}
     
     return render (request, 'type.html', context)
 
@@ -132,11 +150,35 @@ def design_view(request,pk):
     
     return render(request, 'design.html', context)
 
+def design_view_all(request):
+    # fab = fabric_model.objects.filter(pk = pk).first()
+    # type = type_model.objects.filter(pk = pk).first().ty_id
+    kameez_design_list = design_kameez_model.objects.all()
+    salowaar_design_list = design_salowaar_model.objects.all()
+    shirt_design_list = design_shirt_model.objects.all()
+    
+    
+    # type_id = val_type()
+    context = {'kameez_design_list' : kameez_design_list, 'salowaar_design_list':salowaar_design_list, 'shirt_design_list':shirt_design_list}
+
+    # fab = val_fab()
+    
+    # global val_fab
+    # def val_fab():
+    #     return fab
+    
+    
+    return render(request, 'design_all.html', context)
+
+
 @login_required
 def update_profile_view(request):
     context = {}
     data = user_model.objects.get(user__id = request.user.id)
     context["data"] = data
+    
+    if request.user.is_authenticated:
+        username = request.user.username
     
     if request.method == "POST":
         fn = request.POST["first_name"]
@@ -158,7 +200,7 @@ def update_profile_view(request):
         data.u_gender = gndr
         
         data.save()
-    return render(request, 'update_profile.html')
+    return render(request, 'update_profile.html', {'username':username})
 
 @login_required
 def measurement_kameez_views(request):
