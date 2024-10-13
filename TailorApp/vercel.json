@@ -1,0 +1,11 @@
+{
+    "builds": [{
+        "src": "Online_Tailoring_System_Project/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLamdaSize": "15mb", "runtime": "python3.12" }
+    }],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "Online_Tailoring_System_Project/wsgi.py"
+    }]
+}
