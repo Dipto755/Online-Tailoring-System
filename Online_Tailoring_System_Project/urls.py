@@ -50,3 +50,5 @@ urlpatterns = [
     path('/homepage/fabric/type/design/salowaar-designs-details/measurement-salwar/payment-method', tviews.payment_method, name='payment-method2'),
     
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_URL)
